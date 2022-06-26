@@ -42,8 +42,6 @@ option  + 空格						// 打开你安装的UTools
 ```
 更多快捷键[参考](https://support.apple.com/zh-cn/HT201236)
 
-<br/>
-
 ### **1.2 触发角**
 有时需要快速打开启动台、调度中心、应用程序窗口，可以使用快捷键做到，也可以设为mac的触发角动作。打开**系统偏好设置-桌面与屏幕保护程序-屏幕保护程序-触发角**，就可以设置触发角动作，比如左上角鼠标划过就打开控制台，右下角划过就锁定屏幕，非常便捷。
 
@@ -87,8 +85,6 @@ cat ~/.ssh/id_rsa.pub
 // 验证是否成功
 ssh -T git@github.com
 ```
-
-<br/>
 
 #### **2.1.2 Node + nvm**
 
@@ -143,7 +139,7 @@ npm  -v
 
 打开[链接](https://github.com/nvm-sh/nvm#install--update-script):在下面的简介中找到install这几个字，然后继续往下找，直到找到
 
-<img src='../images/nvm.png' width="500px">
+<img src='../images/nvm.png' width="600px">
 <br/>
 复制箭头所指的字到终端执行会就安装nvm
 
@@ -198,8 +194,6 @@ npm config set registry https://registry.npm.taobao.org
 npm config list
 ```
 
-<br/>
-
 #### **2.1.3 编辑器**
 * Sublime Text
 * PhpStorm
@@ -208,14 +202,11 @@ npm config list
 
 本人选择 [vscode](https://code.visualstudio.com/download) 👍
 
-<br/>
 
 #### **2.1.4 Chrome**
 > chrome 浏览器是前端开发必不可少的软件，除此之外还有 Firefox 和 Safari 浏览器同样重要。
 
 * [下载地址](https://www.google.com/intl/zh-CN/chrome/)
-
-<br/>
 
 #### **2.1.5 抓包工具 charles**
 > 好用的抓包工具，基本功能包括抓包、断点调试、请求替换、构造请求、代理功能，方便移动端调试。
@@ -246,8 +237,6 @@ iterm2是一款功能强大的**命令行应用/终端工具**，通常用于替
 * [下载地址](https://iterm2.com/)
 * [官方文档](https://iterm2.com/documentation.html)
 
-<br/>
-
 #### **2.2.2 zsh & oh-my-zsh**
 
 **1.作用**
@@ -259,8 +248,6 @@ zsh是shell语言类型，兼容bash，提供强大的命令行功能，但是�
 
 * [下载地址](https://ohmyz.sh/)
 * [【操作】item2 + oh-my-zsh 终端配置](https://juejin.cn/post/6894432073491152910)
-
-<br/>
 
 #### **2.2.3 Homebrew（brew）**
 
@@ -286,8 +273,6 @@ brew install curl可以安装curl第三方库，这样你在开发时就可以�
 brew cask install chrome可以安装谷歌浏览器应用程序，可直接运行
 ```
 
-<br/>
-
 #### **2.2.4 tmux**
 
 **1.问题**
@@ -311,14 +296,10 @@ Pane：Window里面的小分屏<br/>
 
 <img src='../images/tmux.png' width="400px">
 
-<br/>
-
 **4.相关链接**
 
 * [【教程】Tmux使用教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
 * [【教程】Tmux配置](https://www.cnblogs.com/zuoruining/p/11074367.html)
-
-<br/>
 
 #### **2.2.5 dotfile**
 
@@ -329,8 +310,6 @@ dotfiles是以 . 为前缀的文件的统称，在Mac OS X或Linux这类系统�
 **2.相关链接**
 
 *[【教程】dotfiles新手教程](https://www.jianshu.com/p/7UJapk/)
-
-<br/>
 
 #### **2.2.6 mackup**
 
@@ -361,8 +340,6 @@ mackup uninstall # 将配置文件拷回原来的系统目录
 
 * [【教程】使用 Mackup 快速备份 Mac 软件的配置文件](https://sspai.com/post/32933)
 
-<br/>
-
 #### **2.2.7 ncu**
 
 **1.问题**
@@ -378,8 +355,6 @@ npm-check-updates（ncu）是**npm模块升级工具**，可以在插件升级�
 * [官方网址](https://www.npmjs.com/package/npm-check-updates)
 * [【教程】白话版ncu使用手则](https://www.cnblogs.com/vickylinj/p/12230374.html)
 
-<br/>
-
 #### **2.2.8 xcode command line tools**
 
 **1.问题**
@@ -393,8 +368,6 @@ xcode command line tools 是Apple针对上述问题提供了一个单独的、�
 **3.相关链接**
 
 * [官方网址](https://mac.install.guide/commandlinetools/index.html)
-
-<br/>
 
 #### **2.2.9 adb**
 
@@ -424,8 +397,6 @@ Android Debug Bridge（adb），翻译过来叫**安卓调试桥，顾名思义�
 ```
 Are you sure you want to continue connecting (yes/no)? //输入yes，回车
 ```
-
-<br/>
 
 ### **3.2 nvm安装成功但nvm命令没反应**
 
@@ -462,15 +433,11 @@ proxy_on
 proxy_off
 ```
 
-<br/>
-
 ### **3.3 代理导致vscode拓展安装出错**
 
 现象：<font color=“red”>在下载vscode拓展插件时显示“安装XXX拓展时出错。有关更多详细信息，请查看日志。请尝试手动下载”</font>
 
 原因：电脑开了代理软件，只要把代理关掉就可以正常下载vscode插件。
-
-<br/>
 
 ### **3.4 iterm2权限问题引起的node配置发生错误**
 
@@ -482,8 +449,6 @@ proxy_off
 
 * “文件和文件夹”授予权限
 * 打开“完全磁盘访问权限”
-
-<br/>
 
 ### **3.5 Mac每次重启都需要重新执行配置文件**
 
