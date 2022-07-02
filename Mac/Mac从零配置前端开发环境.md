@@ -36,7 +36,7 @@ Command + control + 空格            // 打开表情符号选择界面
 Command + control + Q              // 锁定屏幕
 option  + 空格						// 打开你安装的 UTools
 ```
-更多快捷键[参考](https://support.apple.com/zh-cn/HT201236)
+更多快捷键 [参考](https://support.apple.com/zh-cn/HT201236)
 
 ## **1.2 触发角**
 有时需要快速打开启动台、调度中心、应用程序窗口，可以使用快捷键做到，也可以设为 mac 的触发角动作。打开**系统偏好设置-桌面与屏幕保护程序-屏幕保护程序-触发角**，就可以设置触发角动作，比如左上角鼠标划过就打开控制台，右下角划过就锁定屏幕，非常便捷。
@@ -71,7 +71,7 @@ cd ~/.ssh   // 若打开该文件夹为空，则表示没有生成过秘钥，�
 ssh -keygen -t rsa -C "sevenXXX@163.com"
 
 // 接着默认一直回车
-// 执行成功后，会在主目录 .ssh 路径下生成两个文件： id_rsa 私钥文件、 id_rsa.pub 公钥文件。
+// 执行成功后，会在主目录 .ssh 路径下生成两个文件： id_rsa 私钥文件、id_rsa.pub 公钥文件。
 
 // 检查SSH是否生成成功
 cat ~/.ssh/id_rsa.pub
@@ -85,15 +85,15 @@ ssh -T git@github.com
 ### **2.1.2 Node + nvm**
 
 **1. nvm**
->  Node Version Manager（nvm）是**node 版本管理工具**，使用 nvm 已经是 Nodejs 开发者必备的工具，它最大的用途在于可以轻松切换不同版本的 Nodejs ，帮助团队统一开发环境，避免版本问题引发的错误。
+>  Node Version Manager（nvm）是**node 版本管理工具**，使用 nvm 已经是 Nodejs 开发者必备的工具，它最大的用途在于可以轻松切换不同版本的 Nodejs，帮助团队统一开发环境，避免版本问题引发的错误。
 
 （1）卸载 node
 
-若电脑已经安装 node ，需要卸载掉，检查是否安装 node 。
+若电脑已经安装 node ，需要卸载掉，检查是否安装 node。
 ```
 node -v
 ```
-如果有版本返回，说明电脑已经安装 node ，此时需要把 node 卸载掉，若未安装 node 忽略以下操作。
+如果有版本返回，说明电脑已经安装 node，此时需要把 node 卸载掉，若未安装 node 忽略以下操作。
 ```
 // 依次执行
 sudo npm uninstall npm -g
@@ -109,31 +109,31 @@ npm  -v
 ```
 
 或者手动删除
-* NODE_MODULES or NODE 文件夹（位于您的 /usr/local/lib)
-* NODE-GYP 文件夹（位于您的 /usr/local/bin)
-* NODE 文件夹（位于您的 /usr/local/bin)
-* NODE-DEBUG 文件夹（位于您的 /usr/local/bin)
-* NODE 文件夹（位于您的 /usr/local/include)
-* NODE_MODULES 文件夹（位于您的 /usr/local/include)
+* NODE_MODULES or NODE 文件夹（位于您的 /usr/local/lib）
+* NODE-GYP 文件夹（位于您的 /usr/local/bin）
+* NODE 文件夹（位于您的 /usr/local/bin）
+* NODE-DEBUG 文件夹（位于您的 /usr/local/bin）
+* NODE 文件夹（位于您的 /usr/local/include）
+* NODE_MODULES 文件夹（位于您的 /usr/local/include）
 * NPM （位于您的主目录中）
 * NODE-GYP （位于您的主目录中）
-* NODE 文件夹（位于您的 /opt/local/include)
-* NODE 文件夹（位于您的 /opt/local/bin/)
-* NODE 文件夹（位于您的 /usr/local/share/doc/)
-* NODE_MODULES 文件夹（位于您的 /opt/local/lib/)
+* NODE 文件夹（位于您的 /opt/local/include）
+* NODE 文件夹（位于您的 /opt/local/bin/）
+* NODE 文件夹（位于您的 /usr/local/share/doc/）
+* NODE_MODULES 文件夹（位于您的 /opt/local/lib/）
 * NODE_REPL_HISTORY （位于您的主目录中）
-* STP （位于您的 /usr/local/share/systemtap/tapset/)
-* D （位于您的 /usr/local/lib/dtrace/)
-* NPM* （位于您的 /usr/local/share/man/man1)
-* NODE* （位于您的 /usr/local/share/man/man1)
-* .NPMRC （位于您的主目录中）——如果您想在卸载后立即重新安装 Node.js，则不应删除该文件。
+* STP （位于您的 /usr/local/share/systemtap/tapset/）
+* D （位于您的 /usr/local/lib/dtrace/）
+* NPM* （位于您的 /usr/local/share/man/man1）
+* NODE* （位于您的 /usr/local/share/man/man1）
+* .NPMRC （位于您的主目录中）——如果您想在卸载后立即重新安装 Node.js ，则不应删除该文件。
 
 
 （2）安装 git
 
 （3）安装 nvm
 
-打开[链接](https://github.com/nvm-sh/nvm#install--update-script):在下面的简介中找到 install 这几个字，然后继续往下找，直到找到
+打开 [链接](https://github.com/nvm-sh/nvm#install--update-script) :在下面的简介中找到 install 这几个字，然后继续往下找，直到找到
 
 <img src='../images/nvm.png' width="600px">
 <br/>
@@ -152,9 +152,9 @@ export NVM_DIR="$HOME/.nvm"
 // 使其生效
 source ~/.zshrc
 ```
-最后进行测试： `nvm`
+最后进行测试：`nvm`
 
-（4） nvm 常用指令
+（4）nvm 常用指令
 ```
 nvm version 查看当前的版本
 nvm install 安装最新版本 nvm
@@ -171,7 +171,7 @@ nvm uninstall <version> 卸载制定的版本
 * 由于 npm 安装的模块路径均为 /usr/local/lib/node_modules ，当使用 n 切换不同的 node 版本时，实际上会共用全局的 node/npm 目录。 因此不能很好的满足按不同 node 版本使用不同全局 node 模块的需求。
 
 **3. node**
-> Nodejs 是一个基于 Chrome V8 引擎的 JavaScript 运行环境；使用一个事件驱动、非阻塞 I/O 的模型，使其轻量且高效。 Nodejs 的软件包生态系统 npm 是全球最大的开源库生态系统。
+> Nodejs 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。它使用一个事件驱动、非阻塞 I/O 的模型，使其轻量且高效。Nodejs 的软件包生态系统 npm 是全球最大的开源库生态系统。
 
 （1）下载 Nodejs
 
@@ -212,15 +212,15 @@ npm config list
 
 **1. 问题**
 
-Mac 支持原生Shell ，其自带的 Terminal 终端存在一定的缺陷（浅喻： ie ）。
+Mac 支持原生 Shell，其自带的 Terminal 终端存在一定的缺陷（浅喻：ie ）。
 
 **2. 作用**
 
-iterm2 是一款功能强大的**命令行应用/终端工具**，通常用于替代 Terminal 。
+iterm2 是一款功能强大的**命令行应用/终端工具**，通常用于替代 Terminal。
 * 选中即复制，无需 command ＋ c
-* 全文查找并高亮显示： command ＋ f
-* 垂直分屏： command ＋ d
-* 水平分屏： command ＋ shift ＋ d 
+* 全文查找并高亮显示：command ＋ f
+* 垂直分屏：command ＋ d
+* 水平分屏：command ＋ shift ＋ d 
 * 等等
 
 **3. 相关链接**
@@ -232,7 +232,7 @@ iterm2 是一款功能强大的**命令行应用/终端工具**，通常用于�
 
 **1. 作用**
 
-zsh 是 shell 语言类型，兼容 bash ，提供强大的命令行功能，但是配置复杂。
+zsh 是 shell 语言类型，兼容 bash，提供强大的命令行功能，但是配置复杂。
 而 oh-my-zsh 是一个开源的框架，用于管理和简化 zsh 配置。
 
 **2. 相关链接**
@@ -280,23 +280,23 @@ tmux 是一个开源且功能非常强大的**终端多路复用器**，用于�
 
 **3. 概念关系**
 
-Server ：是整个 tmux 的后台服务<br/>
-Session ：是 tmux 的所有会话<br/>
-Window ：相当于一个工作区，包含很多分屏<br/>
-Pane ： Window 里面的小分屏<br/>
+Server：是整个 tmux 的后台服务<br/>
+Session：是 tmux 的所有会话<br/>
+Window：相当于一个工作区，包含很多分屏<br/>
+Pane： Window 里面的小分屏<br/>
 
 <img src='../images/tmux.png' width="400px">
 
 **4. 相关链接**
 
-* [【教程】 Tmux 使用教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
-* [【教程】 Tmux 配置](https://www.cnblogs.com/zuoruining/p/11074367.html)
+* [【教程】Tmux 使用教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
+* [【教程】Tmux 配置](https://www.cnblogs.com/zuoruining/p/11074367.html)
 
 ### **2.2.5 dotfile**
 
 **1. 作用**
 
-dotfiles 是以 . 为前缀的文件的统称，在 Mac OS X 或 Linux 这类系统中，在工作环境中这类文件是作为隐藏文件展示的，无法看到（如： .vimrc\.bashrc\.bash_profile 等）。它们通常用来存储一些个人化的设定或是自定的拓展功能，以符合使用者本身的实用需求与习惯，从而提升自身的工作效率。 dotfiles 一般用于软件设置，可以通过备份 dotfiles 的方式来**同步软件设置**。
+dotfiles 是以 . 为前缀的文件的统称，在 Mac OS X 或 Linux 这类系统中，在工作环境中这类文件是作为隐藏文件展示的，无法看到（如： .vimrc\.bashrc\.bash_profile 等）。它们通常用来存储一些个人化的设定或是自定的拓展功能，以符合使用者本身的实用需求与习惯，从而提升自身的工作效率。dotfiles 一般用于软件设置，可以通过备份 dotfiles 的方式来**同步软件设置**。
 
 **2. 相关链接**
 
@@ -335,7 +335,7 @@ mackup uninstall # 将配置文件拷回原来的系统目录
 
 **1. 问题**
 
-npm update ，只能按照 package.json 中标注的版本号进行更新，升级后不会修改 package.json 中的版本号，需要自己手动修改，比较麻烦。
+npm update，只能按照 package.json 中标注的版本号进行更新，升级后不会修改 package.json 中的版本号，需要自己手动修改，比较麻烦。
 
 **2. 作用**
 
@@ -350,7 +350,7 @@ npm-check-updates（ncu）是 **npm 模块升级工具**，可以在插件升级
 
 **1. 问题**
 
-Xcode 是**在命令行上运行**的软件开发人员的工具，即在终端应用程序（也称为控制台）中运行。开箱即用的 Mac 并不包含编程所需的所有软件和工具。相反， Apple 为程序员提供了一个名为 Xcode 的完整开发环境，可以单独下载和安装。完整的 Xcode 包很大，需要超过40GB的磁盘空间，并且支持所有 Apple 操作系统的开发。许多软件开发人员，尤其是 Web 应用程序开发人员，都在使用 Mac ，但并未为 Apple 设备开发软件。他们仍然需要与 Xcode 包一起安装的类 Unix 工具和实用程序。
+Xcode 是**在命令行上运行**的软件开发人员的工具，即在终端应用程序（也称为控制台）中运行。开箱即用的 Mac 并不包含编程所需的所有软件和工具。相反，Apple 为程序员提供了一个名为 Xcode 的完整开发环境，可以单独下载和安装。完整的 Xcode 包很大，需要超过 40 GB 的磁盘空间，并且支持所有 Apple 操作系统的开发。许多软件开发人员，尤其是 Web 应用程序开发人员，都在使用 Mac，但并未为 Apple 设备开发软件。他们仍然需要与 Xcode 包一起安装的类 Unix 工具和实用程序。
 
 **2. 作用**
 
@@ -397,7 +397,7 @@ Are you sure you want to continue connecting (yes/no)? //输入 yes ，回车
 
 解决方法：进行终端代理
 * 在终端输入： vim .bash_profile
-* 按“ i ”进入编辑模式，填写
+* 按“i”进入编辑模式，填写
 ```
 function proxy_on() {
     export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
@@ -413,7 +413,7 @@ function proxy_off(){
     echo -e "已关闭代理"
 }
 ```
-* 按“ esc ”退出编辑模式，“ shift+zz ”保存退出
+* 按“esc”退出编辑模式，“shift+zz”保存退出
 * 在终端输入命令使其生效
 ```
 source .bash_profile
@@ -445,7 +445,7 @@ proxy_off
 
 现象：<font color=“red”>每次开启终端都要执行 source ~/.bash_profile 配置的环境变量才生效</font>
 
-原因： zsh 加载的是 ~/.zshrc 文件，而 ‘ .zshrc ’ 文件中并没有定义任务环境变量。
+原因：zsh 加载的是 ~/.zshrc 文件，而 ‘.zshrc’ 文件中并没有定义任务环境变量。
 
 解决方法：在 ~/.zshrc 文件最后增加
 ```
