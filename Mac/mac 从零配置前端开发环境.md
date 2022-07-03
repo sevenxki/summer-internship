@@ -290,7 +290,7 @@ Pane： Window 里面的小分屏<br/>
 **4. 相关链接**
 
 * [【教程】Tmux 使用教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
-* [【教程】Tmux 配置](https://www.cnblogs.com/zuoruining/p/11074367.html)
+* [【教程】Tmux 使用手则](http://louiszhai.github.io/2017/09/30/tmux/)
 
 ### **2.2.5 dotfile**
 
