@@ -1,5 +1,14 @@
-# **1 Mac 基础技巧**
-## **1.1 Mac 常用快捷键**
+# **mac 从零配置前端开发环境**
+
+## 目录
+
+* 1.Mac 基础技巧
+* 2.Mac 前端开发环境搭建
+* 3.Mac 开发环境搭建过程遇到的问题
+
+
+## **一、Mac 基础技巧**
+### **1 Mac 常用快捷键**
 ```
 // 访达
 Command + Shift + 3                // 截取全屏到桌面
@@ -38,24 +47,24 @@ option  + 空格						// 打开你安装的 UTools
 ```
 更多快捷键 [参考](https://support.apple.com/zh-cn/HT201236)
 
-## **1.2 触发角**
+### **2 触发角**
 有时需要快速打开启动台、调度中心、应用程序窗口，可以使用快捷键做到，也可以设为 mac 的触发角动作。打开**系统偏好设置-桌面与屏幕保护程序-屏幕保护程序-触发角**，就可以设置触发角动作，比如左上角鼠标划过就打开控制台，右下角划过就锁定屏幕，非常便捷。
 
 <img src='../images/触发角.png' width="500px">
 
 <br/>
 
-# **2 Mac 前端开发环境搭建**
-## **2.1 基本配置**
-### **2.1.1 Git**
+## **二、Mac 前端开发环境搭建**
+### **1 基本配置**
+#### **1.1 Git**
 > Git 是一个开源的**分布式版本控制系统**，可以有效、高速地处理从很小到非常大的项目版本管理。
 
-**1. 安装 Git**
+**（1）安装 Git**
 
 * [官网下载](https://git-scm.com/download/mac)
 * 通过brew命令安装：`brew install git`
 
-**2. 配置基础信息和 SSH**
+**（2）配置基础信息和 SSH**
 
 * 设置 username 和 email
 ```
@@ -82,12 +91,12 @@ cat ~/.ssh/id_rsa.pub
 ssh -T git@github.com
 ```
 
-### **2.1.2 Node + nvm**
+#### **1.2 Node + nvm**
 
-**1. nvm**
+**（1）nvm**
 >  Node Version Manager（nvm）是**node 版本管理工具**，使用 nvm 已经是 Nodejs 开发者必备的工具，它最大的用途在于可以轻松切换不同版本的 Nodejs，帮助团队统一开发环境，避免版本问题引发的错误。
 
-（1）卸载 node
+**a. 卸载 node**
 
 若电脑已经安装 node ，需要卸载掉，检查是否安装 node。
 ```
@@ -129,9 +138,9 @@ npm  -v
 * .NPMRC （位于您的主目录中）——如果您想在卸载后立即重新安装 Node.js ，则不应删除该文件。
 
 
-（2）安装 git
+**b. 安装 git**
 
-（3）安装 nvm
+**c. 安装 nvm**
 
 打开 [链接](https://github.com/nvm-sh/nvm#install--update-script) :在下面的简介中找到 install 这几个字，然后继续往下找，直到找到
 
@@ -139,7 +148,7 @@ npm  -v
 <br/>
 复制箭头所指的字到终端执行会就安装 nvm
 
-**注意：安装完成后，还暂时不能用，需要复制它提示的代码来配置环境变量，如**
+**注意**：安装完成后，还暂时不能用，需要复制它提示的代码来配置环境变量，如：
 ```
 // 编辑 .zshrc
 vim .zshrc
@@ -154,7 +163,7 @@ source ~/.zshrc
 ```
 最后进行测试：`nvm`
 
-（4）nvm 常用指令
+**d. nvm 常用指令**
 ```
 nvm version 查看当前的版本
 nvm install 安装最新版本 nvm
@@ -165,22 +174,25 @@ nvm current显示当前版本
 nvm uninstall <version> 卸载制定的版本
 ```
 
-**2. nvm 和 n 的比较**
-* n: 全局安装的 npm package 。使用 npm install -g n 安装，与 node 循环依赖。
-* n 命令是作为一个 node 的模块而存在，而 nvm 是一个独立于 node/npm 的外部 shell 脚本，因此 n 命令相比 nvm 更加局限。
-* 由于 npm 安装的模块路径均为 /usr/local/lib/node_modules ，当使用 n 切换不同的 node 版本时，实际上会共用全局的 node/npm 目录。 因此不能很好的满足按不同 node 版本使用不同全局 node 模块的需求。
+**（2）nvm 和 n 的比较**
 
-**3. node**
+n：全局安装的 npm package。使用 `npm install -g n` 安装，与 node 循环依赖。
+
+n 命令是作为一个 node 的模块而存在，而 nvm 是一个独立于 node/npm 的外部 shell 脚本，因此 n 命令相比 nvm 更加局限。
+
+由于 npm 安装的模块路径均为 /usr/local/lib/node_modules ，当使用 n 切换不同的 node 版本时，实际上会共用全局的 node/npm 目录。 因此不能很好的满足按不同 node 版本使用不同全局 node 模块的需求。
+
+**（3）node**
 > Nodejs 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。它使用一个事件驱动、非阻塞 I/O 的模型，使其轻量且高效。Nodejs 的软件包生态系统 npm 是全球最大的开源库生态系统。
 
-（1）下载 Nodejs
+**a. 下载 Nodejs**
 
 * [官网下载](https://nodejs.org/en/)
 * 用 nvm 下载：`nvm install <version>`
 
 安装完成后可以在终端输入 `node -v` 和 `npm - v` 验证是否安装成功
 
-（2）设置 npm 淘宝镜像源
+**b. 设置 npm 淘宝镜像源**
 
 ```
 // 设置
@@ -190,7 +202,7 @@ npm config set registry https://registry.npm.taobao.org
 npm config list
 ```
 
-### **2.1.3 编辑器**
+#### **1.3 编辑器**
 * Sublime Text
 * PhpStorm
 * Visual Studio Code
@@ -199,22 +211,22 @@ npm config list
 本人选择 [vscode](https://code.visualstudio.com/download) 👍
 
 
-### **2.1.4 Chrome**
+#### **1.4 Chrome**
 > chrome 浏览器是前端开发必不可少的软件，除此之外还有 Firefox 和 Safari 浏览器同样重要。
 
 * [下载地址](https://www.google.com/intl/zh-CN/chrome/)
 
 <br/>
 
-## **2.2 进阶配置**
+### **2 进阶配置**
 
-### **2.2.1 iterm2**
+#### **2.1 iterm2**
 
-**1. 问题**
+**（1）问题**
 
 Mac 支持原生 Shell，其自带的 Terminal 终端存在一定的缺陷（浅喻：ie ）。
 
-**2. 作用**
+**（2）作用**
 
 iterm2 是一款功能强大的**命令行应用/终端工具**，通常用于替代 Terminal。
 * 选中即复制，无需 command ＋ c
@@ -223,40 +235,42 @@ iterm2 是一款功能强大的**命令行应用/终端工具**，通常用于�
 * 水平分屏：command ＋ shift ＋ d 
 * 等等
 
-**3. 相关链接**
+**（3）相关链接**
 
 * [下载地址](https://iterm2.com/)
 * [官方文档](https://iterm2.com/documentation.html)
 
-### **2.2.2 zsh & oh-my-zsh**
+#### **2.2 zsh & oh-my-zsh**
 
-**1. 作用**
+**（1）作用**
 
 zsh 是 shell 语言类型，兼容 bash，提供强大的命令行功能，但是配置复杂。
 而 oh-my-zsh 是一个开源的框架，用于管理和简化 zsh 配置。
 
-**2. 相关链接**
+**（2）相关链接**
 
 * [下载地址](https://ohmyz.sh/)
 * [【操作】item2 + oh-my-zsh 终端配置](https://juejin.cn/post/6894432073491152910)
 
-### **2.2.3 Homebrew（brew）**
+#### **2.3 Homebrew（brew）**
 
-**1. 作用**
+**（1）作用**
 
-* Homebrew 是基于 OS X 的**套件管理工具**，是一个开源的 Ruby 脚本，专门用于快速下载软件。更通俗地讲，Homebrew 类似于一个软件中心，可以理解成 App Store 或者 Google Play 那样的软件商店，只不过 Homebrew 比前者以及 Mac App Store 来说有着更丰富的资源与更高效的管理。
-* Homebrew Cask 是一套建立在 Homebrew 基础之上的 OS X 软件安装命令行工具，是 Homebrew 的扩展，可以把 Homebrew Cask 当作是 Homebrew 的一部分，在安装常用软件的过程中，大部分情况下只需要使用 Homebrew Cask 就足够了。
+Homebrew 是基于 OS X 的**套件管理工具**，是一个开源的 Ruby 脚本，专门用于快速下载软件。更通俗地讲，Homebrew 类似于一个软件中心，可以理解成 App Store 或者 Google Play 那样的软件商店，只不过 Homebrew 比前者以及 Mac App Store 来说有着更丰富的资源与更高效的管理。
 
-**2. 安装**
+Homebrew Cask 是一套建立在 Homebrew 基础之上的 OS X 软件安装命令行工具，是 Homebrew 的扩展，可以把 Homebrew Cask 当作是 Homebrew 的一部分，在安装常用软件的过程中，大部分情况下只需要使用 Homebrew Cask 就足够了。
+
+**（2）安装**
 
 ```
 ruby -e "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install)"
 ```
 
-**3. 对比**
+**（3）对比**
 
-* brew 主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发
-* brew cask 主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在 mac 中直接运行使用
+brew 主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发
+
+brew cask 主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在 mac 中直接运行使用
 
 ```
 // 举例
@@ -264,13 +278,13 @@ brew install curl 可以安装 curl 第三方库，这样你在开发时就可�
 brew cask install chrome 可以安装谷歌浏览器应用程序，可直接运行
 ```
 
-### **2.2.4 tmux**
+#### **2.4 tmux**
 
-**1. 问题**
+**（1）问题**
 
 一般情况下，当你需要在远程服务器上同时进行多项任务，我们可以在命令后面加上&来同时运行多条命令。但是当你想要同时监视每个任务的时候，这就不可行了。又或者可以开多个窗口，来分别执行任务，但是对于不同的窗口，还需要重新 SSH 连接到远程服务器，大大降低了工作效率，当你桌面上窗口太多的时候，也可能会在找哪个窗口进行哪个任务上浪费大量时间。
 
-**2. 作用**
+**（2）作用**
 
 tmux 是一个开源且功能非常强大的**终端多路复用器**，用于类 Unix 操作系统。
 * 允许在单个窗口中同时访问多个会话
@@ -278,7 +292,7 @@ tmux 是一个开源且功能非常强大的**终端多路复用器**，用于�
 * 允许每个会话有多个连接窗口
 * 支持窗口任意的垂直和水平拆分
 
-**3. 概念关系**
+**（3）概念关系**
 
 Server：是整个 tmux 的后台服务<br/>
 Session：是 tmux 的所有会话<br/>
@@ -287,28 +301,28 @@ Pane： Window 里面的小分屏<br/>
 
 <img src='../images/tmux.png' width="400px">
 
-**4. 相关链接**
+**（4）相关链接**
 
 * [【教程】Tmux 使用教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
 * [【教程】Tmux 使用手则](http://louiszhai.github.io/2017/09/30/tmux/)
 
-### **2.2.5 dotfile**
+#### **2.5 dotfile**
 
-**1. 作用**
+**（1）作用**
 
 dotfiles 是以 . 为前缀的文件的统称，在 Mac OS X 或 Linux 这类系统中，在工作环境中这类文件是作为隐藏文件展示的，无法看到（如： .vimrc\.bashrc\.bash_profile 等）。它们通常用来存储一些个人化的设定或是自定的拓展功能，以符合使用者本身的实用需求与习惯，从而提升自身的工作效率。dotfiles 一般用于软件设置，可以通过备份 dotfiles 的方式来**同步软件设置**。
 
-**2. 相关链接**
+**（2）相关链接**
 
 *[【教程】dotfiles 新手教程](https://www.jianshu.com/p/7UJapk/)
 
-### **2.2.6 mackup**
+#### **2.6 mackup**
 
-**1. 作用**
+**（1）作用**
 
 Mackup 是 Github 上的开源项目，旨在快速方便地**备份恢复软件的配置文件**。
 
-**2. 使用**
+**（2）使用**
 
 ```
 // 安装 Mackup
@@ -327,52 +341,56 @@ makeup -h # 帮助命令
 mackup uninstall # 将配置文件拷回原来的系统目录
 ```
 
-**3.相关链接**
+**（3）相关链接**
 
 * [【教程】使用 Mackup 快速备份 Mac 软件的配置文件](https://sspai.com/post/32933)
 
-### **2.2.7 ncu**
+#### **2.7 ncu**
 
-**1. 问题**
+**（1）问题**
 
 npm update，只能按照 package.json 中标注的版本号进行更新，升级后不会修改 package.json 中的版本号，需要自己手动修改，比较麻烦。
 
-**2. 作用**
+**（2）作用**
 
 npm-check-updates（ncu）是 **npm 模块升级工具**，可以在插件升级后会自动修改 package.json 里的版本号，简单方便。
 
-**3. 相关链接**
+**（3）相关链接**
 
 * [官方网址](https://www.npmjs.com/package/npm-check-updates)
 * [【教程】白话版 ncu 使用手则](https://www.cnblogs.com/vickylinj/p/12230374.html)
 
-### **2.2.8 xcode command line tools**
+#### **2.8 xcode command line tools**
 
-**1. 问题**
+**（1）问题**
 
-Xcode 是**在命令行上运行**的软件开发人员的工具，即在终端应用程序（也称为控制台）中运行。开箱即用的 Mac 并不包含编程所需的所有软件和工具。相反，Apple 为程序员提供了一个名为 Xcode 的完整开发环境，可以单独下载和安装。完整的 Xcode 包很大，需要超过 40 GB 的磁盘空间，并且支持所有 Apple 操作系统的开发。许多软件开发人员，尤其是 Web 应用程序开发人员，都在使用 Mac，但并未为 Apple 设备开发软件。他们仍然需要与 Xcode 包一起安装的类 Unix 工具和实用程序。
+Xcode 是**在命令行上运行**的软件开发人员的工具，即在终端应用程序（也称为控制台）中运行。开箱即用的 Mac 并不包含编程所需的所有软件和工具。相反，Apple 为程序员提供了一个名为 Xcode 的完整开发环境，可以单独下载和安装。完整的 Xcode 包很大，需要超过 40 GB 的磁盘空间，并且支持所有 Apple 操作系统的开发。
 
-**2. 作用**
+许多软件开发人员，尤其是 Web 应用程序开发人员，都在使用 Mac，但并未为 Apple 设备开发软件。他们仍然需要与 Xcode 包一起安装的类 Unix 工具和实用程序。
+
+**（2）作用**
 
 xcode command line tools 是 Apple 针对上述问题提供了一个单独的、更小的下载。它安装了软件开发最需要的实用程序，我们可以从终端应用程序安装这个较小的包，或者作为安装 Homebrew 的一部分。
 
-**3. 相关链接**
+**（3）相关链接**
 
 * [官方网址](https://mac.install.guide/commandlinetools/index.html)
 
-### **2.2.9 adb**
+#### **2.9 adb**
 
-**1. 作用**
+**（1）作用**
 
 Android Debug Bridge（adb），翻译过来叫**安卓调试桥，顾名思义就是连接 Android 设备和电脑的工具**。 Android 平台的一些功能只能通过对普通用户隐藏的路径和方法来访问。这些通常是在一些命令行 adb 命令的帮助下完成的，这是 Google 为开发人员提供的一种工具。 Android 调试桥 (adb) 是一种功能多样的**命令行工具**，可让您与设备进行通信。 adb 命令可用于执行各种设备操作（例如安装和调试应用），并提供对 Unix shell（可用来在设备上运行各种命令）的访问权限，我们也可以将其用于各种整洁和隐藏的技巧。
 
-**2. adb 组成**
+**（2）adb 组成**
 
-* 客户端：用于发送命令。客户端在开发机器上运行，可以通过发出 adb 命令从命令行终端调用客户端。
-* 守护程序（adbd）：用于在设备上运行命令。守护程序在每个设备上作为后台进程运行。
-* 服务器：用于管理客户端与守护程序之间的通信。服务器在开发机器上作为后台进程运行。
+客户端：用于发送命令。客户端在开发机器上运行，可以通过发出 adb 命令从命令行终端调用客户端。
 
-**3. 相关链接**
+守护程序（adbd）：用于在设备上运行命令。守护程序在每个设备上作为后台进程运行。
+
+服务器：用于管理客户端与守护程序之间的通信。服务器在开发机器上作为后台进程运行。
+
+**（3）相关链接**
 
 * [官方网站](https://developer.android.com/studio/command-line/adb)
 * [【教程】Mac 系统下 adb 入门](https://blog.csdn.net/and_then111/article/details/110233453)
@@ -380,8 +398,8 @@ Android Debug Bridge（adb），翻译过来叫**安卓调试桥，顾名思义�
 
 <br/>
 
-# **3 Mac 开发环境搭建过程遇到的问题**
-## **3.1 git 生成密钥使用报错**
+## **三、Mac 开发环境搭建过程遇到的问题**
+### **1 git 生成密钥使用报错**
 现象：<font color=“red”>The authenticity of host 'github.com' can't be established.</font>
 
 原因：少了一个 known_hosts 文件，本来密钥文件应该是三个，现在是两个，于是报错，此时选择 yes 回车之后即可，同时生成了缺少了的 known_hosts 文件。
@@ -389,7 +407,7 @@ Android Debug Bridge（adb），翻译过来叫**安卓调试桥，顾名思义�
 Are you sure you want to continue connecting (yes/no)? //输入 yes ，回车
 ```
 
-## **3.2 nvm 安装成功但 nvm 命令没反应**
+### **2 nvm 安装成功但 nvm 命令没反应**
 
 现象：<font color=“red”>在控制台输入 nvm 有结果但无法执行 nvm 的命令</font>
 
@@ -424,13 +442,13 @@ proxy_on
 proxy_off
 ```
 
-## **3.3 代理导致 vscode 拓展安装出错**
+### **3 代理导致 vscode 拓展安装出错**
 
 现象：<font color=“red”>在下载 vscode 拓展插件时显示“安装XXX拓展时出错。有关更多详细信息，请查看日志。请尝试手动下载”</font>
 
 原因：电脑开了代理软件，只要把代理关掉就可以正常下载 vscode 插件。
 
-## **3.4 iterm2 权限问题引起的 node 配置发生错误**
+### **4 iterm2 权限问题引起的 node 配置发生错误**
 
 现象：<font color=“red”>在 iterm2 进行 node 配置时出现错误： Error: EPERM: operation not permitted, scandir '/Users/xxx/.Trash' </font>
 
@@ -441,7 +459,7 @@ proxy_off
 * “文件和文件夹”授予权限
 * 打开“完全磁盘访问权限”
 
-## **3.5 Mac 每次重启都需要重新执行配置文件**
+### **5 Mac 每次重启都需要重新执行配置文件**
 
 现象：<font color=“red”>每次开启终端都要执行 source ~/.bash_profile 配置的环境变量才生效</font>
 
