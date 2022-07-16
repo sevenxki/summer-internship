@@ -1,6 +1,6 @@
 # **mac 从零配置前端开发环境**
 
-## 目录
+<h2>目录</h2>
 
 * 1.Mac 基础技巧
 * 2.Mac 前端开发环境搭建
@@ -36,14 +36,14 @@ Command + W                        // 关闭当前应用窗口
 Command + Q                        // 完全退出当前应用
 Command + N                        // 新建当前应用窗口
 Command + ,                        // 打开当前应用的偏好设置
-Command + 空格						// 打开聚焦搜索
+Command + 空格					   // 打开聚焦搜索
 Command + Option + esc             // 打开强制退出的窗口
 Command + control + F              // 应用全屏
-Command + control + 空格            // 打开表情符号选择界面
+Command + control + 空格           // 打开表情符号选择界面
 
 // 其他
 Command + control + Q              // 锁定屏幕
-option  + 空格						// 打开你安装的 UTools
+option  + 空格					   // 打开你安装的 UTools
 ```
 更多快捷键 [参考](https://support.apple.com/zh-cn/HT201236)
 
@@ -212,7 +212,7 @@ npm config list
 
 
 #### **1.4 Chrome**
-> chrome 浏览器是前端开发必不可少的软件，除此之外还有 Firefox 和 Safari 浏览器同样重要。
+> Chrome 浏览器是前端开发必不可少的软件，除此之外还有 Firefox 和 Safari 浏览器同样重要。
 
 * [下载地址](https://www.google.com/intl/zh-CN/chrome/)
 
